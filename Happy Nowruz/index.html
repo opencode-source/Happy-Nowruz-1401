@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Happy Nowruz 1401</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <h2>Happy Nowruz<br><span>1401</span></h2>
+    </section>
+    <script>
+        function stars(){
+            // number of stars
+            const count = 300;
+            const section = document.querySelector('section');
+            let i = 0;
+
+            while(i < count){
+                let star = document.createElement('i');
+                const x = Math.floor(Math.random() * window.innerWidth);
+                const y = Math.floor(Math.random() * window.innerHeight);
+
+                const size = Math.random() * 4;
+                star.style.left = x+'px';
+                star.style.top = y+'px';
+                star.style.width = 1+size+'px';
+                star.style.height = 1+size+'px';
+                
+                const duration = Math.random() * 2;
+
+                star.style.animationDuration = 2+duration+'s';
+                star.style.animationDelay = duration+'s';
+
+                section.appendChild(star);
+
+                i++;
+            }
+        }
+
+        stars();
+    </script>
+</body>
+</html>
